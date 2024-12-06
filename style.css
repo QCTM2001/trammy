@@ -70,32 +70,30 @@ time {
 
 #info {
       margin-top: 2.6rem;
+      display: flex;
+      flex-wrap: wrap; /* Cho phép các phần tử tự động xuống dòng khi không đủ không gian */
+      justify-content: center;
+      align-items: center;
+      gap: 10px; /* Khoảng cách giữa các phần tử */
 }
 
 #heart {
-      grid-column: span 2;
-      display: grid;
-      grid-template-rows: 2;
       font-size: 44px;
       color: #b90d46;
-      align-self: center;
-      padding-bottom: 2.6rem;
       text-align: center;
 }
 
 anni {
       font-size: 16px;
       letter-spacing: 0.2px;
+      padding-top: 0;
 }
 
-#info .one {
-      grid-column: 3 / 6;
+#info .one, #info .two {
       text-align: center;
-}
-
-#info .two {
-      grid-column: 8 / 11;
-      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 }
 
 footer {
@@ -137,13 +135,12 @@ footer {
             height: 120px;
       }
 
-      #info .one, #info .two{
-            grid-column: span 12;;
+      #info {
+            flex-direction: row; /* Đặt ảnh đại diện và trái tim nằm ngang */
       }
 
       #heart {
-            grid-column: span 12;
-            padding-bottom: 1rem;
+            margin: 0 15px;
       }
 
       footer {
