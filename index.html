@@ -38,9 +38,28 @@
             <div id="music">
                   <audio loop autoplay controls>Your browser does not support the audio element.</audio>
             </div>
-            <footer>💕</footer>
+            <!-- <footer>Thank you for your love 💕</footer> -->
       </div> 
       
       <script src="app.js"></script>
 </body>
+
+<script>
+      function createSnowflake() {
+            const snowflake = document.createElement('div');
+            snowflake.className = 'snowflake';
+            snowflake.textContent = '❄';
+            snowflake.style.left = Math.random() * 100 + 'vw';
+            snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
+            snowflake.style.fontSize = Math.random() * 10 + 10 + 'px';
+
+            document.body.appendChild(snowflake);
+
+            setTimeout(() => {
+                snowflake.remove();
+            }, 5000);
+        }
+
+        setInterval(createSnowflake, 100);
+</script>
 </html>
