@@ -1,84 +1,193 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <link rel="stylesheet" href="style.css">
-      <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
-      <title>Trầm ❤ My</title>
-</head>
-<body>          
-     <div id="wrapper">
-           <h1>CHÚNG MÌNH</h1>
+html, body {
+      background-image: url(img/1.jpg);
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-attachment: fixed;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      /* overflow: hidden; */
+}
 
-           <div id="clock-box">
-                 <div id="clock">
-                       <date>0 NGÀY</date>
-                       <time>00:00:00</time>
-                  </div>
-            </div>
-            
-            <div id="info">
-                  <div class="one">
-                        <img src="img/tram.jpg" class="avt">
-                        <p>Quốc Trầm</p>
-                  </div>
-                  <div id="heart">
-                        ❤
-                        <br>
-                        <anni>...</anni>
-                  </div>
-                  <div class="two">
-                        <img src="img/my.jpg" class="avt">
-                        <p>Thùy My</p>
-                  </div>
-            </div>
-            
-            <div id="music">
-                  <audio loop autoplay controls>Your browser does not support the audio element.</audio>
-            </div>
-            <br>
-            <div class="loibaihat">
-                  <p>
-                  Anh thực sự muốn ôm em thật chặt ngay lúc này <br>
-                  Từng kí ức ở trong hơi thở quen thuộc<br>
-                  Tình yêu đích thực là không cần phải dùng quá nhiều lời<br>
-                  Gieo một điều ước khi thấy hoa nở<br>
-                  Anh thực sự muốn ôm em thật chặt ngay lúc này<br>
-                  Để những nỗi nhớ đó vượt qua mọi khoảng cách<br>
-                  Em là ngôi sao sáng nhất trên bầu trời đêm nay<br>
-                  Hãy dẫn lối anh trong biển người mênh mông<br>
-                  Tựa như cơn mưa tháng tư từng chút rơi vào đáy lòng của anh<br>
-                  Trời đã nắng và mưa đã tạnh, em đang ở đâu?<br>
-                  Nghĩ đến em, hơi thở của anh không thể dừng lại dù chỉ là từng phút giây<br>
-                  Hoa đã nở rồi<br>
-                  Nhưng em thì<br>
-                  Em đang nơi đâu?<br>
-                  </p>
-            </div>
-            <!-- <footer>Thank you for your love 💕</footer> -->
-      </div> 
-      
-      <script src="app.js"></script>
-</body>
+img {
+      width: 100%;
+      height: auto;
+}
 
-<script>
-      function createSnowflake() {
-            const snowflake = document.createElement('div');
-            snowflake.className = 'snowflake';
-            snowflake.textContent = '❄';
-            snowflake.style.left = Math.random() * 100 + 'vw';
-            snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
-            snowflake.style.fontSize = Math.random() * 10 + 10 + 'px';
+body {
+      display: grid;
+      font-family: "Segoe UI", sans-serif;
+      grid-template-columns: repeat(12, 1fr);
+      grid-auto-rows: minmax(auto, auto);
+      color: #000000;
+      text-shadow: 0.4px 0.4px 0.4px rgba(0,0,0,.2);
+}
 
-            document.body.appendChild(snowflake);
+h1 {
+      font-weight: lighter;
+      grid-column: span 3;
+      text-align: center;
+      color: #000000;
+}
 
-            setTimeout(() => {
-                snowflake.remove();
-            }, 5000);
-        }
+#wrapper {
+      display: grid;
+      grid-column: 3 / 11;
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: minmax(auto, auto);
+      grid-row-gap: 10px;
+      margin-top: 3.6rem;
+}
 
-        setInterval(createSnowflake, 300);
-</script>
-</html>
+#clock-box, #info {
+      grid-column: span 3;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+}
+
+#clock-box #clock {
+      grid-column: 4 / 10;
+      /* background-color: #f5f5f5; */
+      background-color: #00000015;
+      padding: .6rem 2rem;
+      padding-top: .8rem;
+      text-align: center;
+      font-size: 2.4rem;
+      border-radius: 10rem;
+}
+
+date, time {
+      display: block;
+}
+
+date {
+      font-size: 18px;
+}
+
+time {
+      font-family: "Arial", sans-serif;
+      line-height: 3.2rem;
+      letter-spacing: 2px;
+}
+
+.avt {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+#info {
+      margin-top: 2.6rem;
+      display: flex;
+      flex-wrap: wrap; /* Cho phép các phần tử tự động xuống dòng khi không đủ không gian */
+      justify-content: center;
+      align-items: center;
+      gap: 10px; /* Khoảng cách giữa các phần tử */
+}
+
+#heart {
+      font-size: 44px;
+      color: #000000;
+      text-align: center;
+}
+
+anni {
+      font-size: 16px;
+      letter-spacing: 0.2px;
+      padding-top: 0;
+}
+
+#info .one, #info .two {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+}
+
+footer {
+      grid-column: span 3;
+      text-align: center;
+      font-size: 1.6rem;
+      font-weight: lighter;
+      margin-top: 1.2rem;
+}
+
+#music {
+      grid-column: 2;
+      position: relative;
+      z-index: 1000;
+      opacity: .4;
+}
+
+#mask {
+      background-image: linear-gradient(to top, #6d44cc5d 0%, #f09cd880 100%);
+      opacity: .42;
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+}
+
+@media (max-width: 992px) {
+      #wrapper {
+            grid-column: span 12;
+      }
+
+      #clock-box #clock {
+            grid-column: 2 / 12;
+      }
+
+      .avt {
+            width: 120px;
+            height: 120px;
+      }
+
+      #info {
+            flex-direction: row; /* Đặt ảnh đại diện và trái tim nằm ngang */
+      }
+
+      #heart {
+            margin: 0 15px;
+      }
+
+      footer {
+            font-size: 1.2rem;
+            margin: 0;
+            padding-bottom: 2rem;
+      }
+}
+
+
+.snowflake {
+      position: fixed;
+      top: -10px;
+      color: white;
+      font-size: 1em;
+      pointer-events: none;
+      animation: fall linear infinite;
+  }
+
+@keyframes fall {
+      0% {
+          transform: translateY(-100px);
+          opacity: 1;
+      }
+      100% {
+          transform: translateY(100vh);
+          opacity: 0;
+      }
+}
+
+.loibaihat {
+      grid-column: 2;
+      text-align: center; /* Căn giữa nội dung bên trong thẻ */
+      max-width: 1000px; /* Đặt giới hạn chiều rộng nếu cần */
+      line-height: 1.8; /* Giãn dòng cho đẹp hơn */
+      font-family: Arial, sans-serif; /* Chọn font chữ tùy thích */
+      padding: 20px; /* Thêm khoảng cách bên trong */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hiệu ứng đổ bóng */
+      background-color: #00000017; /* Nền trắng cho nội dung */
+      border-radius: 10px; /* Bo góc nếu cần */
+}
