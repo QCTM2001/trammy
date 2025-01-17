@@ -7,6 +7,7 @@ html, body {
       background-size: cover;
       margin: 0;
       padding: 0;
+      overflow: hidden;
 }
 
 img {
@@ -177,4 +178,17 @@ footer {
           transform: translateY(100vh);
           opacity: 0;
       }
+}
+
+/* Lớp phủ màu xám */
+.overlay {
+     position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: gray; /* Màu xám */
+      opacity: 0.8; /* Độ trong suốt */
+      z-index: 2; /* Đặt lớp phủ lên trên */
+      pointer-events: none; /* Để không chặn tương tác với nội dung bên dưới */
 }
